@@ -1,0 +1,6 @@
+.env
+Vector_Store/
+*.sqlite3
+*.bin
+__pycache__/
+.vscode/
