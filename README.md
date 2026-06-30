@@ -1,263 +1,392 @@
-# MediAssistAI
+# 🏥 MediAssistAI
 
-MediAssistAI is a healthcare-focused AI assistant that combines document retrieval, multimodal image understanding, and hospital database querying into a single conversational interface. The system is designed to help users ask questions about uploaded medical documents, prescriptions, lab reports, images, and structured hospital data.
+> **An Intelligent Healthcare Assistant powered by RAG, Multimodal AI, MCP, and Multi-Agent Architecture**
 
-## 1. Overview
+MediAssistAI is an advanced healthcare-focused AI platform that combines **Document Intelligence**, **Medical Image Understanding**, **Hospital Database Querying**, and **Agentic AI Reasoning** into a unified conversational experience.
 
-<<<<<<< HEAD
-3. Run the streamlit
-streamlit run ui/streamlit.py
-=======
-The platform consists of three major capabilities:
+The system enables healthcare professionals, administrators, and users to interact naturally with medical documents, prescriptions, reports, images, and structured hospital databases through a single AI-powered interface.
 
-- Document understanding and retrieval from PDF, DOCX, and TXT files
-- Multimodal processing for uploaded images such as prescriptions and lab reports
-- Structured querying over hospital data through an MCP-backed database layer
+---
 
-A FastAPI backend exposes the application services, while a Streamlit frontend provides the end-user experience.
+## ✨ Key Features
 
-## 2. Architecture
+### 📄 Intelligent Document Analysis
 
-The repository is organized into the following major modules:
+* Upload and analyze PDF, DOCX, and TXT files
+* Semantic search using Retrieval-Augmented Generation (RAG)
+* Context-aware question answering
+* Vector-based document retrieval
 
-- App/Rag: document ingestion, chunking, embeddings, vector search, and answer generation
-- App/Multimodal: image upload, OCR/vision processing, indexing, and retrieval
-- App/MCP: database connector, query tools, and MCP API integration
-- App/Agents: planner, retriever, MCP, multimodal, and reasoning agents
-- App/Graph: agent orchestration and routing pipeline
-- Backend: FastAPI services for RAG, MCP, and multimodal APIs
-- Frontend: Streamlit-based web UI
-- Data: uploaded files, processed artifacts, and golden evaluation data
+### 🖼️ Multimodal Medical Understanding
 
-### Core flow
+* Prescription image analysis
+* Lab report interpretation
+* OCR-based text extraction
+* Vision-enabled healthcare document processing
 
-1. User uploads documents or images through the UI.
-2. Documents are ingested, chunked, embedded, and stored in a vector database.
-3. Queries are routed through the agent pipeline.
-4. Relevant document chunks, database results, and image context are combined.
-5. The reasoning layer returns a grounded answer to the user.
+### 🏥 MCP-Powered Hospital Database Access
 
-## 3. Main Components
+* Patient information retrieval
+* Prescription management
+* Laboratory report lookup
+* Appointment tracking
+* Billing information access
+* Natural language database querying
 
-### 3.1 RAG pipeline
+### 🤖 Multi-Agent Intelligence
 
-The retrieval and generation pipeline is implemented under App/Rag.
+* Planner Agent
+* Retriever Agent
+* MCP Agent
+* Multimodal Agent
+* Reasoning Agent
 
-Key modules:
-- document_loader.py: loads PDF, DOCX, and TXT files
-- chunking.py: splits documents into chunk-sized segments
-- embedding_service.py: generates embeddings
-- vector_store.py: stores and retrieves vector data
-- rag_chain.py: builds the answer generation pipeline with reranking
-- retriever.py: retrieves relevant context for a query
-- ingest.py: runs the ingestion workflow over uploaded documents
+### 📊 Evaluation & Monitoring
 
-### 3.2 Multimodal pipeline
+* Golden Dataset Evaluation
+* LLM-as-a-Judge Framework
+* System Health Monitoring
+* Performance Metrics Dashboard
 
-The multimodal subsystem is implemented under App/Multimodal.
+---
 
-Key modules:
-- image_processor.py: processes uploaded images
-- ocr_service.py: extracts text from images
-- vision_service.py: handles visual understanding tasks
-- indexer.py: indexes image content for retrieval
-- ingest.py: ingests image assets into the multimodal store
-
-### 3.3 MCP and hospital database layer
-
-The database layer is implemented under App/MCP.
-
-Key modules:
-- connector.py: manages database connectivity
-- tools.py: provides query helpers for patients, prescriptions, labs, appointments, billing, and other hospital data
-- query_router.py: maps natural language requests to structured database retrieval
-- server.py: MCP server entry point
-
-### 3.4 Agent orchestration
-
-The graph-based orchestration layer is implemented under App/Graph.
-
-It coordinates:
-- planner agent for route selection
-- retriever agent for RAG context
-- MCP agent for database access
-- multimodal agent for image context
-- reasoning agent for final synthesis
-
-## 4. Technology Stack
-
-- Python 3.11
-- FastAPI for backend APIs
-- Streamlit for the web UI
-- LangChain and LangGraph for retrieval and orchestration workflows
-- ChromaDB for vector storage
-- Sentence Transformers and Transformers for embeddings and language models
-- PyTorch for model support
-- PostgreSQL-compatible database access via psycopg2-binary
-- Groq API for LLM-based answer generation
-- EasyOCR and Pillow for image processing
-
-## 5. Project Structure
+# 🏗️ System Architecture
 
 ```text
-App/
-  Agents/
-  Evaluation/
-  Graph/
-  Logs/
-  MCP/
-  Multimodal/
-  Prompts/
-  Rag/
-Backend/
-Frontend/
-Data/
-VectorDB/
+                    ┌──────────────────┐
+                    │      User        │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                ┌─────────────────────────┐
+                │  Streamlit Dashboard    │
+                └──────────┬──────────────┘
+                           │
+                           ▼
+                ┌─────────────────────────┐
+                │     Planner Agent       │
+                └──────────┬──────────────┘
+                           │
+        ┌──────────────────┼──────────────────┐
+        ▼                  ▼                  ▼
+
+ ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+ │ RAG Agent   │   │ MCP Agent   │   │ Multimodal  │
+ │             │   │             │   │ Agent       │
+ └──────┬──────┘   └──────┬──────┘   └──────┬──────┘
+        │                 │                 │
+        ▼                 ▼                 ▼
+
+  Vector DB        Hospital DB       OCR + Vision
+
+        └─────────────────────────────────┘
+                          │
+                          ▼
+                ┌─────────────────┐
+                │ Reasoning Agent │
+                └────────┬────────┘
+                         │
+                         ▼
+                    Final Answer
 ```
 
-## 6. Environment Setup
+---
 
-### Prerequisites
+# 🚀 Core Modules
 
-- Python 3.11+
-- pip
-- Docker (optional, recommended)
-- Access to a PostgreSQL-compatible database if MCP queries are required
-- A Groq API key if you want full LLM-generated answers
+## 📂 RAG Module
 
-### Install dependencies
+Location: `App/Rag`
+
+Responsible for:
+
+* Document Loading
+* Chunking
+* Embedding Generation
+* Vector Database Storage
+* Retrieval
+* Re-ranking
+* Answer Generation
+
+### Components
+
+| Module               | Purpose             |
+| -------------------- | ------------------- |
+| document_loader.py   | Load documents      |
+| chunking.py          | Split documents     |
+| embedding_service.py | Generate embeddings |
+| vector_store.py      | Store vectors       |
+| retriever.py         | Retrieve context    |
+| rag_chain.py         | Generate responses  |
+| ingest.py            | Document ingestion  |
+
+---
+
+## 🖼️ Multimodal Module
+
+Location: `App/Multimodal`
+
+Responsible for:
+
+* OCR Processing
+* Medical Image Understanding
+* Image Indexing
+* Image Retrieval
+
+### Components
+
+| Module             | Purpose             |
+| ------------------ | ------------------- |
+| image_processor.py | Image preprocessing |
+| ocr_service.py     | OCR extraction      |
+| vision_service.py  | Vision reasoning    |
+| indexer.py         | Image indexing      |
+| ingest.py          | Image ingestion     |
+
+---
+
+## 🏥 MCP Module
+
+Location: `App/MCP`
+
+Provides natural language access to hospital databases.
+
+### Components
+
+| Module          | Purpose             |
+| --------------- | ------------------- |
+| connector.py    | Database connection |
+| tools.py        | Query utilities     |
+| query_router.py | NL to SQL routing   |
+| server.py       | MCP server          |
+
+---
+
+## 🤖 Agent Layer
+
+Location: `App/Agents`
+
+| Agent            | Responsibility         |
+| ---------------- | ---------------------- |
+| Planner Agent    | Query routing          |
+| Retriever Agent  | Document retrieval     |
+| MCP Agent        | Database retrieval     |
+| Multimodal Agent | Image reasoning        |
+| Reasoning Agent  | Final answer synthesis |
+
+---
+
+# 🛠️ Technology Stack
+
+### Backend
+
+* FastAPI
+* Python 3.11
+* LangChain
+* LangGraph
+
+### AI & ML
+
+* Groq LLM
+* Sentence Transformers
+* Transformers
+* PyTorch
+
+### Retrieval
+
+* ChromaDB
+* Vector Embeddings
+* Semantic Search
+
+### Multimodal
+
+* EasyOCR
+* Pillow
+* Computer Vision Models
+
+### Database
+
+* PostgreSQL
+* Psycopg2
+
+### Frontend
+
+* Streamlit
+
+### DevOps
+
+* Docker
+* Docker Compose
+
+---
+
+# 📁 Project Structure
+
+```text
+MediAssistAI
+│
+├── App
+│   ├── Agents
+│   ├── Evaluation
+│   ├── Graph
+│   ├── Logs
+│   ├── MCP
+│   ├── Multimodal
+│   ├── Prompts
+│   └── Rag
+│
+├── Backend
+├── Frontend
+├── Data
+├── VectorDB
+├── Dockerfile
+├── docker-compose.yml
+└── Requirements.txt
+```
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/aniketsawant50/MediAssistAI.git
+cd MediAssistAI
+```
+
+## Create Virtual Environment
+
+### Windows
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate   # Linux/macOS
-.venv\\Scripts\\activate      # Windows PowerShell
-pip install -r Requirements.txt
+.venv\Scripts\activate
 ```
 
-### Required environment variables
-
-Create a .env file with values such as:
-
-```env
-GROQ_API_KEY=your_groq_api_key
-MODEL_NAME=llama-3.3-70b-versatile
-DB_HOST=your_database_host
-DB_PORT=5432
-DB_NAME=your_database_name
-DB_USER=your_database_user
-DB_PASSWORD=your_database_password
-```
-
-## 7. Running the Application Locally
-
-### 7.1 Create and activate a virtual environment
-
-On Windows PowerShell:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r Requirements.txt
-```
-
-On Linux/macOS:
+### Linux / macOS
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
+```
+
+## Install Dependencies
+
+```bash
 pip install -r Requirements.txt
 ```
 
-### 7.2 Ingest documents
+---
 
-Place supported files in the Data/uploads directory and run:
+# 🔐 Environment Variables
+
+Create a `.env` file:
+
+```env
+GROQ_API_KEY=your_api_key
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=database_name
+DB_USER=username
+DB_PASSWORD=password
+
+MODEL_NAME=llama-3.3-70b-versatile
+```
+
+---
+
+# ▶️ Running the Application
+
+## 1. Ingest Documents
 
 ```bash
 python -m App.Rag.ingest
 ```
 
-This process:
-- loads documents
-- splits them into chunks
-- creates embeddings
-- stores them in the vector database
-- also triggers image ingestion if applicable
-
-### 7.3 Start the backend API
+## 2. Start Backend
 
 ```bash
-uvicorn Backend.rag_api:app --host 0.0.0.0 --port 8000 --reload
+uvicorn Backend.Dashboard_api:app --reload
 ```
 
-### 7.4 Start the Streamlit frontend
+## 3. Launch Dashboard
 
 ```bash
-streamlit run Frontend/rag_streamlit.py --server.port 8501
+streamlit run Frontend/Dashboard_streamlit.py
 ```
 
-### 7.5 Access the app
+---
 
-Once both services are running:
-- Open the frontend at http://localhost:8501
-- Use the backend API at http://localhost:8000
-- The health endpoint is available at http://localhost:8000/health
+# 🐳 Docker Deployment
 
-### 7.6 Optional: run evaluation
-
-```bash
-python -m App.Evaluation.run_evaluation
-```
-
-## 8. Docker Deployment
-
-The repository includes Docker support for running the backend and UI together.
-
-### Build and run with Docker Compose
+## Build & Run
 
 ```bash
 docker compose up --build
 ```
 
-Then open:
-- http://localhost:8000 for the API
-- http://localhost:8501 for the Streamlit UI
+### Services
 
-### Docker files
+| Service   | URL                   |
+| --------- | --------------------- |
+| API       | http://localhost:8000 |
+| Dashboard | http://localhost:8501 |
 
-- Dockerfile: container definition for the Python runtime
-- docker-compose.yml: service configuration for API and UI
-- .dockerignore: excludes unnecessary files from the build context
+---
 
-## 9. API Endpoints
+# 📡 API Endpoints
 
-The FastAPI backend exposes the following core endpoints:
+| Method | Endpoint        | Description      |
+| ------ | --------------- | ---------------- |
+| GET    | /health         | Health check     |
+| GET    | /system/health  | System status    |
+| GET    | /system/metrics | Metrics          |
+| POST   | /agent/chat     | Agent workflow   |
+| POST   | /chat           | RAG chat         |
+| POST   | /retrieve       | Retrieve context |
+| POST   | /upload         | Upload documents |
+| POST   | /upload-image   | Upload images    |
 
-- GET /health: basic health status
-- GET /system/health: aggregated service health
-- GET /system/metrics: usage and performance metrics
-- POST /agent/chat: runs the full agent pipeline
-- POST /chat: runs the simple RAG chat flow
-- POST /retrieve: retrieves relevant chunks
-- POST /upload: uploads and indexes documents
-- POST /upload-image: uploads and indexes images
+---
 
-## 10. Evaluation and Testing
+# 📈 Evaluation Framework
 
-The project includes an evaluation module under App/Evaluation.
+The project includes an advanced evaluation pipeline based on:
 
-You can run the evaluation workflow with:
+* Faithfulness
+* Grounding
+* Relevance
+* Completeness
+* Hallucination Detection
+
+Run evaluation:
 
 ```bash
 python -m App.Evaluation.run_evaluation
 ```
 
-This module supports golden dataset testing and scoring for the assistant responses.
+Golden Dataset Included:
 
-## 11. Notes and Recommendations
+```text
+Data/GoldenDataset/
+├── Golden_Dataset_50_QA.docx
+└── golden_dataset.json
+```
 
-- The application works best when documents and images are uploaded before asking questions.
-- If the LLM provider is not configured, the RAG flow can still retrieve context but answer generation may be limited.
-- The MCP feature depends on a reachable and correctly configured database.
-- For production deployments, consider using environment-based secrets, persistent storage for the vector database, and a managed database service.
+---
 
->>>>>>> b55a983 (Added multi-agent architecture, MCP, multimodal, evaluation, dashboard and RAG modules)
+# 🔮 Future Enhancements
+
+* Voice-based healthcare assistant
+* Real-time EHR integration
+* Clinical decision support
+* Medical report summarization
+* Multi-language healthcare support
+* Cloud-native deployment
+
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub and sharing feedback to help improve MediAssistAI.
