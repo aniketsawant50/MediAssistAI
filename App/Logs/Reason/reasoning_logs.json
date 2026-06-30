@@ -1,0 +1,86 @@
+[
+  {
+    "query": "Show patient PC00001Q",
+    "answer": "## Patient Information\nThe patient information is based on the data available from the MCP Database Results.\n\n### Patient Details\n* Patient ID: 1\n* Patient Code: PC00001Q\n* Patient Name: Patient 1 ML\n* Gender: Other\n* Age: 17\n* Blood Group: AB-\n* Diagnosis: Headache\n* Phone: 0005172025\n* Emergency Contact: 9676006321\n* City: Houston\n* Admission Date: 2023-03-11\n* Discharge Date: 2023-04-05\n* Insurance Policy: 232\n\n### Source\nThe patient information is sourced from the **patients** table in the database.\n\n## Image Analysis\nNo image analysis is available for this patient.\n\n## Document Context\nNo document context is available for this patient.\n\n## Summary\nIn summary, the patient PC00001Q is a 17-year-old patient with a diagnosis of headache, admitted to the hospital on 2023-03-11 and discharged on 2023-04-05. The patient's information is sourced from the **patients** table in the database. No additional information is available from image analysis or document context.",
+    "tokens": 634,
+    "cost_usd": 0.000424,
+    "timestamp": "2026-06-30T16:46:12.885949Z"
+  },
+  {
+    "query": "Show patient PC00001Q",
+    "answer": "## Patient Information\nThe patient record is based on the provided MCP database results, as no document context or image analysis is available.\n\n### Patient Details\n* **Patient ID:** 1\n* **Patient Code:** PC00001Q\n* **Patient Name:** Patient 1 ML\n* **Gender:** Other\n* **Age:** 17\n* **Blood Group:** AB-\n* **Diagnosis:** Headache\n* **Phone:** 0005172025\n* **Emergency Contact:** 9676006321\n* **City:** Houston\n* **Admission Date:** 2023-03-11\n* **Discharge Date:** 2023-04-05\n* **Insurance Policy:** 232\n\n### Source Information\n* **Source Table:** patients\n\n## Image / Multimodal Analysis\nNo image analysis is available for this patient.\n\n## Document Context\nNo document context is available for this patient.\n\n## Summary\nIn summary, the patient PC00001Q is a 17-year-old individual with a diagnosis of headache, admitted on 2023-03-11 and discharged on 2023-04-05. The patient's record is based solely on the MCP database results, with no additional information available from document context or image analysis.",
+    "tokens": 647,
+    "cost_usd": 0.000434,
+    "timestamp": "2026-06-30T16:47:13.822100Z"
+  },
+  {
+    "query": "what is admission process",
+    "answer": "**Admission Process Overview**\nThe admission process is initiated when a patient arrives at the hospital. According to the provided RAG context from the document \"Admission Procedure\" (source filename not specified), the first step involves the patient presenting the necessary documents.\n\n**Required Documents**\nThe patient is required to present:\n* Admission advice from a consultant\n* Referral letter (if applicable)\n\n**Database and Image Analysis Results**\nUnfortunately, there are no database results available from the MCP database, and no image analysis is available from the multimodal results.\n\n**Summary**\nIn summary, the admission process begins with the patient's arrival, where they are required to present admission advice from a consultant and a referral letter (if applicable). Due to the unavailability of database and image analysis results, this information is based solely on the provided RAG context. Further details on the admission process are not available in this context.\n\n**Sources:** Admission Process- SOP.pdf",
+    "tokens": 566,
+    "cost_usd": 0.00037,
+    "timestamp": "2026-06-30T16:47:27.560261Z"
+  },
+  {
+    "query": "Show patient PC00001Q",
+    "answer": "### \ud83d\udc64 Patient Information\n\n| Field | Value |\n|---------|---------|\n| Patient ID | 1 |\n| Patient Code | PC00001Q |\n| Patient Name | Patient 1 ML |\n| Gender | Other |\n| Age | 17 |\n| Blood Group | AB- |\n| Diagnosis | Headache |\n| Phone | 0005172025 |\n| Emergency Contact | 9676006321 |\n| City | Houston |\n| Admission Date | 2023-03-11 |\n| Discharge Date | 2023-04-05 |\n| Insurance Policy | 232 |\n\n\ud83d\udcc2 **Source Table:** patients",
+    "llm": false,
+    "direct": true,
+    "timestamp": "2026-06-30T16:49:47.255874Z"
+  },
+  {
+    "query": "Show prescriptions of Patient 1 ML",
+    "answer": "## \ud83d\udc8a Prescriptions\n\n\n### Metformin\n\n\u2022 Dosage: 500mg\n\u2022 Date: 2025-12-07\n\n---\n\n### Metformin\n\n\u2022 Dosage: 750mg\n\u2022 Date: 2025-11-07\n\n---\n\n### Aspirin\n\n\u2022 Dosage: 750mg\n\u2022 Date: 2025-10-17\n\n---\n\n### Paracetamol\n\n\u2022 Dosage: 1 tablet daily\n\u2022 Date: 2025-09-04\n\n---\n\n### Metformin\n\n\u2022 Dosage: 250mg\n\u2022 Date: 2024-08-29\n\n---\n\n### Aspirin\n\n\u2022 Dosage: 500mg\n\u2022 Date: 2024-05-02\n\n---\n\n### Metformin\n\n\u2022 Dosage: 750mg\n\u2022 Date: 2024-01-14\n\n---\n\n### Paracetamol\n\n\u2022 Dosage: 1 tablet daily\n\u2022 Date: 2023-12-22\n\n---\n\n\ud83d\udcc2 **Source Table:** prescriptions",
+    "llm": false,
+    "direct": true,
+    "timestamp": "2026-06-30T16:49:54.311108Z"
+  },
+  {
+    "query": "what is admission process",
+    "answer": "**Admission Process Overview**\nThe admission process is initiated when a patient arrives at the hospital. According to the provided RAG context from the document \"Admission Procedure\" (source filename not specified), the first step involves the patient presenting the necessary documents.\n\n**Required Documents for Admission**\nThe patient is required to present the following documents:\n* Admission advice from a consultant\n* Referral letter (if applicable)\n\n**Database and Image Analysis Results**\nUnfortunately, there are no database results available from the MCP database, and no image analysis is available from the multimodal results.\n\n**Summary of Available Information**\nIn summary, the admission process begins with the patient's arrival and presentation of required documents, including admission advice from a consultant and a referral letter (if applicable). No additional information is available from the database or image analysis. \n\n**Brief Summary**\nThe admission process starts with patient arrival and presentation of necessary documents, including consultant advice and referral letter (if applicable), with no further details available from database or image analysis.\n\n**Sources:** Admission Process- SOP.pdf",
+    "tokens": 588,
+    "cost_usd": 0.000388,
+    "timestamp": "2026-06-30T16:50:07.128845Z"
+  },
+  {
+    "query": "Show patient PC00001Q",
+    "answer": "### \ud83d\udc64 Patient Information\n\n| Field | Value |\n|---------|---------|\n| Patient ID | 1 |\n| Patient Code | PC00001Q |\n| Patient Name | Patient 1 ML |\n| Gender | Other |\n| Age | 17 |\n| Blood Group | AB- |\n| Diagnosis | Headache |\n| Phone | 0005172025 |\n| Emergency Contact | 9676006321 |\n| City | Houston |\n| Admission Date | 2023-03-11 |\n| Discharge Date | 2023-04-05 |\n| Insurance Policy | 232 |\n\n\ud83d\udcc2 **Source Table:** patients",
+    "llm": false,
+    "direct": true,
+    "timestamp": "2026-06-30T16:52:20.028487Z"
+  },
+  {
+    "query": "Show lab reports of Patient 1 ML",
+    "answer": "## \ud83e\uddea Lab Reports\n\n\n### HbA1c\n\n\u2022 Lab ID: 420012\n\u2022 Result: Critical\n\u2022 Report Date: 2026-06-07\n\n---\n\n### HbA1c\n\n\u2022 Lab ID: 296148\n\u2022 Result: Normal\n\u2022 Report Date: 2026-05-21\n\n---\n\n### CBC\n\n\u2022 Lab ID: 463872\n\u2022 Result: Abnormal\n\u2022 Report Date: 2026-03-17\n\n---\n\n### TSH\n\n\u2022 Lab ID: 19433\n\u2022 Result: Normal\n\u2022 Report Date: 2025-12-20\n\n---\n\n### KFT\n\n\u2022 Lab ID: 13642\n\u2022 Result: Normal\n\u2022 Report Date: 2025-09-12\n\n---\n\n### Lipid Profile\n\n\u2022 Lab ID: 490236\n\u2022 Result: Critical\n\u2022 Report Date: 2025-08-07\n\n---\n\n### Vitamin D\n\n\u2022 Lab ID: 484378\n\u2022 Result: Normal\n\u2022 Report Date: 2025-06-12\n\n---\n\n### TSH\n\n\u2022 Lab ID: 394189\n\u2022 Result: Normal\n\u2022 Report Date: 2025-05-30\n\n---\n\n### CBC\n\n\u2022 Lab ID: 355936\n\u2022 Result: Abnormal\n\u2022 Report Date: 2025-04-24\n\n---\n\n### Lipid Profile\n\n\u2022 Lab ID: 139126\n\u2022 Result: Abnormal\n\u2022 Report Date: 2025-01-27\n\n---\n\n\ud83d\udcc2 **Source Table:** lab_results",
+    "llm": false,
+    "direct": true,
+    "timestamp": "2026-06-30T16:53:00.569206Z"
+  },
+  {
+    "query": "6.jpg",
+    "answer": "[Medical Image Document]\nSource File: 57.jpg\nDocument Type: Medical Image\nVisual Description: a sheet with the words ' i ' m ' and ' i ' m '\nStructured Fields:\n- Doctor Name: B, Who\nOCR Extracted Text:\nDr B, Who\nFarmstrcct 12\nKirkvillc\nbel, 3876\nR/\ndate\n0\nMv\n1994\nrm\n0.12\nmx\nb+ech\n4\nMp,7\n5 + &4\n4\nhlet\nMs/Mr\nPahinf\n30\naddress;\nAgc:\n77\nrta\nMin\n0 . Lmv\n\n[Medical Image Document]\nSource File: 52.jpg\nDocument Type: Medical Image\nVisual Description: a letter from the late of the first world war\nOCR Extracted Text:\n1336-38 & 40\nCHERRY STREET\nMealth Suciety\nPHILADELPHIA, PAJ\nOxas Bo\n3\n2\n@muon@ronk\n3\n%\n144431-\nY k\n3~o\n#n7\nE_.\nFor Headache, Nervous\nZzor_\nToerz\n'Ih:e8\n\n[Medical Image Document]\nSource File: 52.jpg\nDocument Type: Medical Image\nVisual Description: a letter from the late of the first world war\nOCR Extracted Text:\n1336-38 & 40\nCHERRY STREET\nMealth Suciety\nPHILADELPHIA, PAJ\nOxas Bo\n3\n2\n@muon@ronk\n3\n%\n144431-\nY k\n3~o\n#n7\nE_.\nFor Headache, Nervous\nZzor_\nToerz\n'Ih:e8\n\n[Medical Image Document]\nSource File: 51.jpg\nDocument Type: Prescription\nVisual Description: a letter from the president of the philippines\nStructured Fields:\n- Doctor Name: Mahcsh Kumar Rovoorl\nOCR Extracted Text:\nDr Mahcsh Kumar Rovoorl\nJsm nu slaik\nMdns *15 (LNT)\nKIMS\nConbullnni ET Sutron\n4(^\nhospitALS\nCvo ( 9\nVn\nJ6(s4/221-\n4.\nRt chult\nded\nM\"fto\n(R\nIc\nJiau\nfdexs\nNa Nii\ncleluds\nKn\n70u\nUt. (tudach\n#Io fer |onah\nDm ,\nOn\nImuuvi\nMh\nHtr ( ).\nSu\n3\ni_\n3\n~lof t\n0k\ntn! ()\ndn\n4+\nnallz\nW~L\nbc\nRf\n%\nsn Imi\n\n[Medical Image Document]\nSource File: 9.jpg\nDocument Type: Prescription\nVisual Description: a table with a list of the different substances\nStructured Fields:\n- Patient Name: Joseph\n- Doctor Name: ess:\nOCR Extracted Text:\nC.O. Jones\n25 El Caro Street\nPleasantville, OH 43320\nDate\nMarch\nI0 ,\n2009\nPatient Name:\nJoseph\nMc Intyre\nAddress:\nDOB:\n12/ 26/1998\nAllergies:\nNKda\nWeight:\n65 kg\nRX:\nAzithromycin 200\n'smL\n15\nML\nDay\n2: 4.5 mL\nDispense\nSolution)\n30\nML\nRefills:\nCo\nJones, ARN?\nm19/\nDay\nm3/ mL\n\n**Sources:** 57.jpg, 9.jpg, 52.jpg, 51.jpg",
+    "llm": false,
+    "direct": true,
+    "timestamp": "2026-06-30T16:53:32.425158Z"
+  },
+  {
+    "query": "what is the admission process",
+    "answer": "**Admission Process Overview**\nThe admission process is outlined in the provided RAG context, which details the initial steps taken when a patient arrives at the hospital.\n\n**Admission Procedure Step 1: Patient Arrival**\nAccording to the RAG context (source: repeated instances of Admission Procedure Step 1), the patient presents with the following documents:\n* Admission advice from a consultant\n* Referral letter (if applicable)\n\n**Database Results**\nUnfortunately, no database results are available (MCP Database Results) to provide additional information on the admission process.\n\n**Image Analysis Results**\nNo image analysis is available (Image / Multimodal Results) to provide visual insights into the admission process.\n\n**Summary**\nIn summary, the admission process begins with the patient's arrival, where they present their admission advice from a consultant and a referral letter (if applicable). Due to the unavailability of database and image analysis results, the provided RAG context is the primary source of information for the admission process. Further details on subsequent steps are not available in the given context.\n\n**Sources:** Admission Process- SOP.pdf",
+    "tokens": 597,
+    "cost_usd": 0.000395,
+    "timestamp": "2026-06-30T16:54:26.251504Z"
+  },
+  {
+    "query": "What ward categories are available?",
+    "answer": "**Ward Categories Available**\nThe available ward categories are listed below, as per the provided RAG context:\n\n* General Ward\n* Semi-Private\n* Private Room\n* Deluxe Room\n* ICU (Intensive Care Unit)\n* HDU (High Dependency Unit)\n\nThese categories are mentioned in the context of insurance and cashless admission process eligibility verification. The admission department is responsible for verifying bed availability, assigning ward categories, and confirming room eligibility under insurance.\n\n**Source Context**\nThe information is sourced from the RAG context, which appears to be a document related to hospital admission procedures and insurance eligibility. The specific filename is not provided.\n\n**Database and Image Results**\nNo database results or image analysis are available to supplement the information.\n\n**Summary**\nIn summary, the hospital offers six ward categories: General Ward, Semi-Private, Private Room, Deluxe Room, ICU, and HDU. These categories are relevant to the insurance and cashless admission process, and the admission department plays a key role in assigning ward categories and verifying room eligibility.\n\n**Sources:** Admission Process- SOP.pdf",
+    "tokens": 876,
+    "cost_usd": 0.000559,
+    "timestamp": "2026-06-30T17:30:09.601446Z"
+  },
+  {
+    "query": "what are the tables in database",
+    "answer": "**Introduction**\nThe user query is to identify the tables in the database. However, the provided context from various agents, including RAG, MCP, and multimodal, does not directly answer this question. Instead, it provides information about medical image documents, data collection principles, and the absence of database and image analysis results.\n\n**RAG Context**\nThe RAG context provides information about a medical image document, specifically a prescription. The details of this document are as follows:\n* **Document Type**: Prescription\n* **Visual Description**: A table with a list of different substances\n* **Structured Fields**:\n  * Patient Name: Joseph\n  * Doctor Name: C.O. Jones\n* **OCR Extracted Text**: Includes patient information, such as address, date of birth, allergies, weight, and prescription details.\n* **Key Medical Details**:\n  * Patient Name: Joseph Mc Intyre\n  * Date: March 10, 2009\n  * Prescription: Azithromycin 200 mL\n* **Source File**: 9.jpg\n\nThis information is repeated across three instances of the medical image document, all referencing the same prescription for Joseph Mc Intyre.\n\n**Data Collection Principles**\nThe hospital's data collection principles are outlined as follows:\n* Collect only necessary information\n* Collect lawfully obtained information\n* Collect purpose-specific information\nThe types of data the hospital collects include:\n* Diagnostic reports\n* Insurance information\n* Employee Data\n* Payroll records\n* Credentials\n* Performance records\n* Vendor Data\n* Contracts\n* Financial information\n\n**MCP Database Results and Image / Multimodal Results**\nThere are no database results or image analysis available to provide further insight into the tables in the database.\n\n**Summary**\nIn summary, the provided context does not directly answer the user's query about the tables in the database. Instead, it offers detailed information about a prescription document, the hospital's data collection principles, and the types of data collected by the hospital. The absence of specific database and image analysis results limits the ability to fully address the user's question. The information available suggests that the hospital collects a wide range of data, but the specific tables in the database remain unidentified based on the provided context.\n\n**Sources:** 9.jpg, HOSPITAL COMPLIANCE.pdf",
+    "tokens": 1314,
+    "cost_usd": 0.000866,
+    "timestamp": "2026-06-30T17:37:19.560536Z"
+  }
+]

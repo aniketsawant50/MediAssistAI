@@ -1,0 +1,146 @@
+[
+  {
+    "query_type": "medical_database",
+    "routes": [
+      "mcp"
+    ],
+    "reasoning": "The query is asking to show a specific patient's record, which is related to patient data and is best handled by the mcp agent.",
+    "is_medical": true,
+    "blocked": false,
+    "query": "Show patient PC00001Q",
+    "timestamp": "2026-06-30T16:46:08.810714Z"
+  },
+  {
+    "query_type": "medical_database",
+    "routes": [
+      "mcp"
+    ],
+    "reasoning": "The query is asking to show a specific patient's record, which is related to patient data and is best handled by the mcp agent.",
+    "is_medical": true,
+    "blocked": false,
+    "query": "Show patient PC00001Q",
+    "timestamp": "2026-06-30T16:47:09.632274Z"
+  },
+  {
+    "query_type": "document_rag",
+    "routes": [
+      "retriever"
+    ],
+    "reasoning": "The user query is related to the admission process, which is likely to be found in hospital SOPs or policies, making the retriever agent the most suitable choice.",
+    "is_medical": true,
+    "blocked": false,
+    "query": "what is admission process",
+    "timestamp": "2026-06-30T16:47:16.987049Z"
+  },
+  {
+    "query_type": "medical_database",
+    "routes": [
+      "mcp"
+    ],
+    "reasoning": "Heuristic routing for medical_database",
+    "is_medical": true,
+    "blocked": false,
+    "query": "Show patient PC00001Q",
+    "timestamp": "2026-06-30T16:49:44.846257Z"
+  },
+  {
+    "query_type": "medical_database",
+    "routes": [
+      "mcp"
+    ],
+    "reasoning": "Heuristic routing for medical_database",
+    "is_medical": true,
+    "blocked": false,
+    "query": "Show prescriptions of Patient 1 ML",
+    "timestamp": "2026-06-30T16:49:49.492802Z"
+  },
+  {
+    "query_type": "document_rag",
+    "routes": [
+      "retriever"
+    ],
+    "reasoning": "Heuristic routing for document_rag",
+    "is_medical": true,
+    "blocked": false,
+    "query": "what is admission process",
+    "timestamp": "2026-06-30T16:49:56.742061Z"
+  },
+  {
+    "query_type": "medical_database",
+    "routes": [
+      "mcp"
+    ],
+    "reasoning": "Heuristic routing for medical_database",
+    "is_medical": true,
+    "blocked": false,
+    "query": "Show patient PC00001Q",
+    "timestamp": "2026-06-30T16:52:17.331880Z"
+  },
+  {
+    "query_type": "medical_database",
+    "routes": [
+      "mcp"
+    ],
+    "reasoning": "Heuristic routing for medical_database",
+    "is_medical": true,
+    "blocked": false,
+    "query": "Show lab reports of Patient 1 ML",
+    "timestamp": "2026-06-30T16:52:54.986708Z"
+  },
+  {
+    "query_type": "image_analysis",
+    "routes": [
+      "multimodal"
+    ],
+    "reasoning": "Heuristic routing for image_analysis",
+    "is_medical": true,
+    "blocked": false,
+    "query": "6.jpg",
+    "timestamp": "2026-06-30T16:53:22.183250Z"
+  },
+  {
+    "query_type": "document_rag",
+    "routes": [
+      "retriever"
+    ],
+    "reasoning": "Heuristic routing for document_rag",
+    "is_medical": true,
+    "blocked": false,
+    "query": "what is the admission process",
+    "timestamp": "2026-06-30T16:54:17.179662Z"
+  },
+  {
+    "query_type": "document_rag",
+    "routes": [
+      "retriever"
+    ],
+    "reasoning": "Heuristic routing for document_rag",
+    "is_medical": true,
+    "blocked": false,
+    "query": "What ward categories are available?",
+    "timestamp": "2026-06-30T17:30:01.041031Z"
+  },
+  {
+    "query_type": "document_rag",
+    "routes": [
+      "retriever"
+    ],
+    "reasoning": "Heuristic routing for document_rag",
+    "is_medical": true,
+    "blocked": false,
+    "query": "what are the tables in database",
+    "timestamp": "2026-06-30T17:37:10.829534Z"
+  },
+  {
+    "query_type": "hybrid",
+    "routes": [
+      "mcp",
+      "retriever"
+    ],
+    "reasoning": "Heuristic routing for hybrid",
+    "is_medical": true,
+    "blocked": false,
+    "query": "What is the purpose of the Patient Admission SOP?",
+    "timestamp": "2026-06-30T18:07:40.423011Z"
+  }
+]

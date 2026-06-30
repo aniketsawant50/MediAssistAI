@@ -1,0 +1,290 @@
+[
+  {
+    "query": "Show patient PC00001Q",
+    "evaluation": {
+      "faithfulness": 10.0,
+      "relevancy": 10.0,
+      "hallucination": 2.0,
+      "completeness": 8.0,
+      "overall_score": 9.1,
+      "grade": "Excellent",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer only uses facts from the provided context, without introducing any external information or assumptions.",
+        "relevancy": "The answer directly addresses the user query by providing detailed patient information for the patient with code PC00001Q.",
+        "hallucination": "The answer mostly reproduces the context, but invents minor facts such as 'The patient information is based on the data available from the MCP Database Results' and 'No image analysis is available for this patient' and 'No document context is available for this patient', which are not present in the original context. However, these inventions are minimal and do not significantly alter the overall meaning of the context.",
+        "completeness": "The answer provides a comprehensive overview of the patient's information, including personal details, medical history, and contact information. However, it lacks additional context or insights that could be derived from image analysis or document context, which are mentioned as not available. This suggests that the answer covers most relevant aspects of the query but may not be entirely complete due to the unavailability of certain data."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:46:16.154005Z"
+  },
+  {
+    "query": "Show patient PC00001Q",
+    "evaluation": {
+      "faithfulness": 10.0,
+      "relevancy": 10.0,
+      "hallucination": 0.0,
+      "completeness": 8.0,
+      "overall_score": 9.5,
+      "grade": "Excellent",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer only uses facts from the provided context, without introducing any external information or assumptions.",
+        "relevancy": "The answer directly addresses the user query by providing detailed information about patient PC00001Q, including patient details, source information, and a summary of their record.",
+        "hallucination": "The answer does not invent any facts not present in the context. It only reiterates and summarizes the information provided in the patient record.",
+        "completeness": "The answer provides a comprehensive overview of the patient's information, including personal details, medical history, and admission/discharge dates. However, it lacks specific details about the patient's treatment, medication, and follow-up care, which might be considered relevant aspects of the query."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:47:15.867622Z"
+  },
+  {
+    "query": "what is admission process",
+    "evaluation": {
+      "faithfulness": 8.0,
+      "relevancy": 8.0,
+      "hallucination": 2.0,
+      "completeness": 6.0,
+      "overall_score": 7.5,
+      "grade": "Good",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer primarily uses facts from the provided context, but introduces external information such as 'MCP database', 'multimodal results', and a source filename 'Admission Process- SOP.pdf', which are not present in the original context.",
+        "relevancy": "The answer addresses the user query by providing an overview of the admission process, including the required documents and the first step of the process. However, the answer is somewhat limited in scope and does not provide a comprehensive explanation of the entire admission process, which is why it does not receive a perfect score.",
+        "hallucination": "The answer does not invent significant facts not present in the context, but it does introduce external concepts such as 'MCP database' and 'multimodal results' that are not mentioned in the provided context, which slightly increases the hallucination risk.",
+        "completeness": "The answer covers the initial steps of the admission process, including the required documents, but lacks detailed information on the subsequent steps and procedures, making it partially incomplete."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:47:29.700119Z"
+  },
+  {
+    "query": "Show patient PC00001Q",
+    "evaluation": {
+      "faithfulness": 10.0,
+      "relevancy": 10.0,
+      "hallucination": 0.0,
+      "completeness": 9.0,
+      "overall_score": 9.75,
+      "grade": "Excellent",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer only uses facts from the provided context, reproducing the original patient information table without any additions or modifications.",
+        "relevancy": "The answer provides detailed patient information for the patient with code PC00001Q, directly addressing the user's query.",
+        "hallucination": "The answer does not invent any facts not present in the context. It appears to be a direct copy of the provided patient information.",
+        "completeness": "The answer provides a comprehensive overview of the patient's information, including personal details, medical information, and contact details. However, it does not explicitly state if this is all the information available for the patient, or if there are other relevant aspects that are not included."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:49:49.479600Z"
+  },
+  {
+    "query": "Show prescriptions of Patient 1 ML",
+    "evaluation": {
+      "faithfulness": 0.0,
+      "relevancy": 10.0,
+      "hallucination": 0.0,
+      "completeness": 8.0,
+      "overall_score": 6.5,
+      "grade": "Fair",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer is a copy of the context, not a rating of faithfulness.",
+        "relevancy": "The answer provides a list of prescriptions, including medication names, dosages, and dates, which directly addresses the user's query to show prescriptions of Patient 1 ML.",
+        "hallucination": "The answer does not invent any facts not present in the context. It appears to be a direct copy of the original context, without any additions or modifications.",
+        "completeness": "The answer provides a list of prescriptions for Patient 1 ML, including the medication name, dosage, and date. However, it does not include any additional relevant information such as the prescribing doctor, patient instructions, or potential side effects, which might be considered important aspects of a patient's prescription history."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:49:56.729517Z"
+  },
+  {
+    "query": "what is admission process",
+    "evaluation": {
+      "faithfulness": 10.0,
+      "relevancy": 9.0,
+      "hallucination": 2.0,
+      "completeness": 6.0,
+      "overall_score": 8.35,
+      "grade": "Good",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer only uses facts from the provided context, accurately describing the admission procedure step 1 and the required documents without introducing any external information.",
+        "relevancy": "The answer directly addresses the user query about the admission process, providing a clear overview of the steps involved and the required documents. However, it includes some extraneous information about database and image analysis results, which are not directly relevant to the user's question.",
+        "hallucination": "The answer mostly rephrases the context, but invents some minor facts such as the existence of an 'Admission Process- SOP.pdf' source and mentions of 'MCP database' and 'multimodal results' which are not present in the original context.",
+        "completeness": "The answer covers the initial steps of the admission process, including the required documents, but lacks detailed information about the subsequent steps, such as the role of hospital staff, the admission procedure, and the patient's journey after presenting the documents."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:50:09.900412Z"
+  },
+  {
+    "query": "Show patient PC00001Q",
+    "evaluation": {
+      "faithfulness": 10.0,
+      "relevancy": 10.0,
+      "hallucination": 0.0,
+      "completeness": 9.0,
+      "overall_score": 9.75,
+      "grade": "Excellent",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer only uses facts from the provided context, reproducing the original patient information table without any additions or modifications.",
+        "relevancy": "The answer provides detailed patient information for the patient with code PC00001Q, directly addressing the user's query.",
+        "hallucination": "The answer does not invent any facts not present in the context. It appears to be a direct copy of the provided patient information.",
+        "completeness": "The answer provides a comprehensive overview of the patient's information, including personal details, medical information, and contact details, but may not cover all possible relevant aspects, such as medical history or treatment plans."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:52:22.264106Z"
+  },
+  {
+    "query": "Show lab reports of Patient 1 ML",
+    "evaluation": {
+      "faithfulness": 0.0,
+      "relevancy": 10.0,
+      "hallucination": 0.0,
+      "completeness": 8.0,
+      "overall_score": 6.5,
+      "grade": "Fair",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer is a copy of the provided context, but it does not address the question of rating faithfulness.",
+        "relevancy": "The answer provides a list of lab reports with relevant details such as lab ID, result, and report date, which directly addresses the user's query to show lab reports of Patient 1 ML.",
+        "hallucination": "The answer does not invent any facts not present in the context. It appears to be a copy of the original lab reports, with no additional information or modifications.",
+        "completeness": "The answer provides a comprehensive list of lab reports for Patient 1 ML, including various tests such as HbA1c, CBC, TSH, KFT, Lipid Profile, and Vitamin D, along with their respective lab IDs, results, and report dates. However, it does not provide any additional context or information about the patient's medical history, current condition, or treatment plans, which might be relevant for a complete understanding of the lab reports."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:53:03.716871Z"
+  },
+  {
+    "query": "6.jpg",
+    "evaluation": {
+      "faithfulness": 0.0,
+      "relevancy": 0.0,
+      "hallucination": 8.0,
+      "completeness": 0.0,
+      "overall_score": 0.4,
+      "grade": "Needs Improvement",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer does not only use facts from the provided context, it appears to be a copy of the context itself.",
+        "relevancy": "The answer does not address the user query, which appears to be a request for information about a specific image file named '6.jpg', but the answer provides information about different image files (57.jpg, 52.jpg, 51.jpg, 9.jpg) and their contents, without any relation to '6.jpg'.",
+        "hallucination": "The answer contains a large amount of extracted text from various medical documents, but does not provide any clear or relevant information to the question about hallucination risk. The text appears to be a jumbled collection of words and phrases, which may indicate a high risk of hallucination due to the lack of coherence and context.",
+        "completeness": "The query was for a specific image file (6.jpg) but the answer provided multiple unrelated medical image documents with different source files (57.jpg, 52.jpg, 51.jpg, 9.jpg) and no relevant information about the queried image file."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "multimodal",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:53:35.333132Z"
+  },
+  {
+    "query": "what is the admission process",
+    "evaluation": {
+      "faithfulness": 8.0,
+      "relevancy": 8.0,
+      "hallucination": 2.0,
+      "completeness": 6.0,
+      "overall_score": 7.5,
+      "grade": "Good",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer primarily uses facts from the provided context, but introduces external sources (MCP Database Results, Image / Multimodal Results, Admission Process- SOP.pdf) not present in the original context, which slightly reduces faithfulness.",
+        "relevancy": "The answer addresses the user query by providing an overview of the admission process, including the initial steps and required documents, but lacks detailed information on subsequent steps due to unavailability of additional data sources.",
+        "hallucination": "The answer does not invent significant facts not present in the context, but it does introduce external sources (e.g., MCP Database Results, Image / Multimodal Results, Admission Process- SOP.pdf) not mentioned in the provided context, which could be considered a minor invention of facts.",
+        "completeness": "The answer provides a general overview of the admission process, including the initial steps and required documents. However, it lacks detailed information on subsequent steps and relies heavily on an external source (RAG context) for its content. The absence of database and image analysis results also limits the completeness of the answer."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T16:54:28.838758Z"
+  },
+  {
+    "query": "What ward categories are available?",
+    "evaluation": {
+      "faithfulness": 10.0,
+      "relevancy": 10.0,
+      "hallucination": 0.0,
+      "completeness": 9.0,
+      "overall_score": 9.75,
+      "grade": "Excellent",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer only uses facts from the provided context, listing the ward categories and their relevance to the insurance and cashless admission process as mentioned in the context.",
+        "relevancy": "The answer directly addresses the user query by listing the available ward categories and providing relevant context about their usage in the hospital's admission process.",
+        "hallucination": "The answer does not invent any facts not present in the context. It accurately lists the ward categories mentioned in the context and provides a summary of the information.",
+        "completeness": "The answer covers all relevant aspects of the query by providing a list of ward categories, explaining their relevance to the insurance and cashless admission process, and mentioning the role of the admission department. However, it does not provide additional details such as the specific amenities or services offered in each ward category, which might be considered relevant by some users."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T17:30:11.676694Z"
+  },
+  {
+    "query": "what are the tables in database",
+    "evaluation": {
+      "faithfulness": 0.0,
+      "relevancy": 0.0,
+      "hallucination": 8.0,
+      "completeness": 0.0,
+      "overall_score": 0.4,
+      "grade": "Needs Improvement",
+      "method": "llm_judge",
+      "details": {
+        "faithfulness": "The answer does not use facts from the provided context to rate faithfulness, as the context does not provide any information related to faithfulness.",
+        "relevancy": "The answer does not address the user query about the tables in the database, instead providing unrelated information about a medical image document and data collection principles.",
+        "hallucination": "The answer invents facts not present in the context, such as the introduction and summary, which are not directly related to the provided information. Additionally, the answer attempts to provide a structured response to a non-existent question about database tables, while the context only discusses medical image documents and data collection principles.",
+        "completeness": "The answer does not provide any information about the tables in the database, which is the main query. It provides irrelevant information about a medical image document, data collection principles, and types of data collected by the hospital, but does not address the question about database tables."
+      }
+    },
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "timestamp": "2026-06-30T17:37:21.847370Z"
+  }
+]

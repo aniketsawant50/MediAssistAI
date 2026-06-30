@@ -50,7 +50,7 @@ def generate_answer(query: str):
     # Retrieve relevant chunks
     retrieved_docs = retriever(
         query=query,
-        k=5
+        k=10
     )
 
     reranked_docs = rerank(query, retrieved_docs)
@@ -63,17 +63,32 @@ def generate_answer(query: str):
         }
     )
 
+    has_image_context = any(
+        doc.get("type") == "image" for doc in reranked_docs
+    )
+
     # Convert retrieved docs to context
     context = "\n\n".join(
         [doc["text"] for doc in reranked_docs if doc.get("text")]
     )
+
+    image_instructions = ""
+    if has_image_context:
+        image_instructions = """
+- The context includes medical images (prescriptions, lab reports, or scans).
+- Present extracted information in a structured format with clear sections:
+  **Document Type**, **Source File**, **Visual Summary**, **Extracted Text**, **Key Medical Details**.
+- For prescriptions: list patient name, doctor, date, medications, dosage, and instructions when present.
+- For lab reports: list test names, values, units, and reference ranges when present.
+- If the user asks to summarize an image, organize the OCR and visual data clearly.
+"""
 
     # No context found
     if not context.strip():
         return {
             "answer": (
                 "I couldn't find relevant information "
-                "in the uploaded hospital documents."
+                "in the uploaded hospital documents or images."
             ),
             "sources": []
         }
@@ -86,7 +101,16 @@ Context:
 Question:
 {query}
 
-Answer based ONLY on the provided context.
+Instructions:
+- Answer ONLY from the provided context.
+- Provide a detailed and comprehensive explanation.
+- Include all relevant information from the context.
+- Use bullet points when appropriate.
+- Explain procedures step-by-step if available.
+- Mention SOP names, departments, contact information, timings, and requirements when present.
+- If information is missing, clearly state what is unavailable.
+{image_instructions}
+Answer:
 """
 
     # LLM Call
@@ -101,8 +125,9 @@ Answer based ONLY on the provided context.
 
     try:
         response = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[
+        model=MODEL_NAME,
+        temperature=0.2,
+        messages=[
                 {
                     "role": "system",
                     "content": """
@@ -125,9 +150,18 @@ Rules:
    - Professional
    - Accurate
    - Clear
-   - Concise
+   - Detailed
+   - Well structured
 
-6. Mention SOP names when available.
+6. When sufficient context is available:
+   - Explain thoroughly
+   - Use bullet points
+   - Include all relevant details
+   - Summarize key points at the end
+
+7. Do not shorten answers unless the user specifically asks for a brief response.
+
+8. Mention SOP names when available.
 """
                 },
                 {"role": "user", "content": prompt},

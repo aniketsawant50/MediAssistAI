@@ -1,0 +1,230 @@
+[
+  {
+    "query": "Show patient PC00001Q",
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "routes": [
+      "mcp"
+    ],
+    "evaluation_grade": "Excellent",
+    "cost_usd": 0.000424,
+    "tokens": {
+      "prompt_tokens": 386,
+      "completion_tokens": 248,
+      "total_tokens": 634
+    },
+    "timestamp": "2026-06-30T16:46:16.154005Z"
+  },
+  {
+    "query": "Show patient PC00001Q",
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "routes": [
+      "mcp"
+    ],
+    "evaluation_grade": "Excellent",
+    "cost_usd": 0.000434,
+    "tokens": {
+      "prompt_tokens": 386,
+      "completion_tokens": 261,
+      "total_tokens": 647
+    },
+    "timestamp": "2026-06-30T16:47:15.867622Z"
+  },
+  {
+    "query": "what is admission process",
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "routes": [
+      "retriever"
+    ],
+    "evaluation_grade": "Good",
+    "cost_usd": 0.00037,
+    "tokens": {
+      "prompt_tokens": 384,
+      "completion_tokens": 182,
+      "total_tokens": 566
+    },
+    "timestamp": "2026-06-30T16:47:29.700119Z"
+  },
+  {
+    "query": "Show patient PC00001Q",
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "routes": [
+      "mcp"
+    ],
+    "evaluation_grade": "Excellent",
+    "cost_usd": 0.0,
+    "tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "timestamp": "2026-06-30T16:49:49.484540Z"
+  },
+  {
+    "query": "Show prescriptions of Patient 1 ML",
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "routes": [
+      "mcp"
+    ],
+    "evaluation_grade": "Fair",
+    "cost_usd": 0.0,
+    "tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "timestamp": "2026-06-30T16:49:56.729517Z"
+  },
+  {
+    "query": "what is admission process",
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "routes": [
+      "retriever"
+    ],
+    "evaluation_grade": "Good",
+    "cost_usd": 0.000388,
+    "tokens": {
+      "prompt_tokens": 384,
+      "completion_tokens": 204,
+      "total_tokens": 588
+    },
+    "timestamp": "2026-06-30T16:50:09.900412Z"
+  },
+  {
+    "query": "Show patient PC00001Q",
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "routes": [
+      "mcp"
+    ],
+    "evaluation_grade": "Excellent",
+    "cost_usd": 0.0,
+    "tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "timestamp": "2026-06-30T16:52:22.266272Z"
+  },
+  {
+    "query": "Show lab reports of Patient 1 ML",
+    "agents_used": [
+      "planner",
+      "mcp",
+      "reasoning"
+    ],
+    "routes": [
+      "mcp"
+    ],
+    "evaluation_grade": "Fair",
+    "cost_usd": 0.0,
+    "tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "timestamp": "2026-06-30T16:53:03.719378Z"
+  },
+  {
+    "query": "6.jpg",
+    "agents_used": [
+      "planner",
+      "multimodal",
+      "reasoning"
+    ],
+    "routes": [
+      "multimodal"
+    ],
+    "evaluation_grade": "Needs Improvement",
+    "cost_usd": 0.0,
+    "tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "timestamp": "2026-06-30T16:53:35.336463Z"
+  },
+  {
+    "query": "what is the admission process",
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "routes": [
+      "retriever"
+    ],
+    "evaluation_grade": "Good",
+    "cost_usd": 0.000395,
+    "tokens": {
+      "prompt_tokens": 385,
+      "completion_tokens": 212,
+      "total_tokens": 597
+    },
+    "timestamp": "2026-06-30T16:54:28.842224Z"
+  },
+  {
+    "query": "What ward categories are available?",
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "routes": [
+      "retriever"
+    ],
+    "evaluation_grade": "Excellent",
+    "cost_usd": 0.000559,
+    "tokens": {
+      "prompt_tokens": 665,
+      "completion_tokens": 211,
+      "total_tokens": 876
+    },
+    "timestamp": "2026-06-30T17:30:11.679689Z"
+  },
+  {
+    "query": "what are the tables in database",
+    "agents_used": [
+      "planner",
+      "retriever",
+      "reasoning"
+    ],
+    "routes": [
+      "retriever"
+    ],
+    "evaluation_grade": "Needs Improvement",
+    "cost_usd": 0.000866,
+    "tokens": {
+      "prompt_tokens": 860,
+      "completion_tokens": 454,
+      "total_tokens": 1314
+    },
+    "timestamp": "2026-06-30T17:37:21.848554Z"
+  }
+]

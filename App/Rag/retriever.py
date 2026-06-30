@@ -27,6 +27,8 @@ def retrieve(query, k: int = 10):
             "text": doc,
             "score": round(float(score), 4),
             "source": metadata.get("source") if isinstance(metadata, dict) else None,
+            "type": metadata.get("type") if isinstance(metadata, dict) else None,
+            "doc_type": metadata.get("doc_type") if isinstance(metadata, dict) else None,
         })
 
     return output

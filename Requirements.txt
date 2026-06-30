@@ -1,3 +1,4 @@
+#Rag
 fastapi
 uvicorn
 streamlit
@@ -23,3 +24,27 @@ numpy
 pandas
 
 groq
+
+# Agents (sequential pipeline; LangGraph optional fallback)
+langgraph
+
+#MCP
+fastmcp
+fastapi
+uvicorn
+psycopg2-binary
+python-dotenv
+
+#Multimodal
+fastapi
+uvicorn
+python-multipart
+pillow
+easyocr
+sentence-transformers
+chromadb
+sentence-transformers
+chromadb
+transformers
+torch
+python-dotenv

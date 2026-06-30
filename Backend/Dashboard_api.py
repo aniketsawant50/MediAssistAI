@@ -6,17 +6,30 @@ from pathlib import Path
 import uuid
 import shutil
 
-from App.rag_chain import generate_answer
-from App.retriever import Retriever
+from App.Rag.rag_chain import generate_answer
+from App.Rag.retriever import Retriever
 
-from App.document_loader import UnifiedLoader
-from App.chunking import TextChunker
-from App.embedding_service import EmbeddingService
-from App.vector_store import VectorStore
+from App.Rag.document_loader import UnifiedLoader
+from App.Rag.chunking import TextChunker
+from App.Rag.embedding_service import EmbeddingService
+from App.Rag.vector_store import VectorStore
+
+try:
+    from Backend.multimodal_api import router as multimodal_router
+except ImportError:
+    from multimodal_api import router as multimodal_router
+
+from App.MCP.query_router import ask_database
+from App.Graph.Graph import run_agent_pipeline
+from App.system_health import get_system_health, get_ai_metrics, update_session_metrics
+from App.Evaluation.Evaluation_agent import EvaluationAgent
+from App.Evaluation.golden_dataset import get_golden_item, load_golden_dataset
 
 app = FastAPI(
     title="MediAssistAI API"
 )
+
+app.include_router(multimodal_router)
 
 retriever = Retriever()
 
@@ -24,7 +37,16 @@ UPLOAD_DIR = Path(
     "Data/uploads"
 )
 
+IMAGE_DIR = Path(
+    "Data/images"
+)
+
 UPLOAD_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+IMAGE_DIR.mkdir(
     parents=True,
     exist_ok=True
 )
@@ -49,6 +71,121 @@ def health():
         "status": "healthy",
         "message": "MediAssistAI API is running"
     }
+
+
+@app.get("/system/health")
+def system_health():
+    try:
+        return get_system_health()
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@app.get("/system/metrics")
+def system_metrics():
+    try:
+        return get_ai_metrics()
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@app.post("/agent/chat")
+def agent_chat(req: QueryRequest):
+    try:
+        result = run_agent_pipeline(req.query)
+
+        tokens = result.get("tokens") or {}
+        cost = result.get("cost_usd", 0.0) or 0.0
+        agents = result.get("agents_used", [])
+        answer = result.get("answer") or ""
+
+        if not answer.strip():
+            answer = (
+                "I couldn't generate an answer. "
+                "Please verify RAG documents are uploaded, "
+                "MCP database is connected, or images are indexed."
+            )
+
+        update_session_metrics(tokens, cost, agents)
+
+        return {
+            "answer": answer,
+            "sources": result.get("sources", []),
+            "agents_used": agents,
+            "routes": result.get("routes", []),
+            "query_type": result.get("query_type", ""),
+            "plan_reasoning": result.get("plan_reasoning", ""),
+            "evaluation": result.get("evaluation", {}),
+            "tokens": tokens,
+            "cost_usd": cost,
+        }
+    except Exception as e:
+        return {
+            "error": str(e),
+            "answer": f"Agent pipeline error: {e}",
+            "sources": [],
+            "agents_used": [],
+            "tokens": {},
+            "cost_usd": 0.0,
+        }
+
+
+@app.get("/evaluation/golden")
+def evaluation_golden_dataset():
+    try:
+        return {
+            "total": len(load_golden_dataset()),
+            "items": load_golden_dataset(),
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@app.post("/evaluation/golden/run")
+def evaluation_golden_run(limit: int = None):
+    try:
+        agent = EvaluationAgent()
+        report = agent.run_golden_batch(limit=limit)
+        return report
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@app.post("/evaluation/single")
+def evaluation_single(req: QueryRequest):
+    """Evaluate: query -> agent pipeline -> LLM judge."""
+    try:
+        result = run_agent_pipeline(req.query)
+        agent = EvaluationAgent()
+        context = "\n\n".join(filter(None, [
+            result.get("rag_context", ""),
+            result.get("mcp_result", ""),
+            result.get("multimodal_result", ""),
+        ]))
+        golden = get_golden_item(req.query)
+        evaluation = agent.evaluate(
+            req.query,
+            context,
+            result.get("answer", ""),
+            golden["golden_answer"] if golden else None,
+        )
+        return {
+            "query": req.query,
+            "answer": result.get("answer", ""),
+            "context_preview": context[:500],
+            "evaluation": evaluation,
+            "agents_used": result.get("agents_used", []),
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@app.get("/ask")
+def ask(query: str):
+    try:
+        return ask_database(query)
+    except Exception as e:
+        return {"error": str(e)}
 
 
 # -----------------------------
@@ -255,23 +392,22 @@ def documents():
 
     try:
 
-        files = [
-
+        doc_files = [
             file.name
+            for file in UPLOAD_DIR.glob("*")
+            if file.is_file()
+        ]
 
-            for file in
-            UPLOAD_DIR.glob("*")
-
+        image_files = [
+            file.name
+            for file in IMAGE_DIR.glob("*")
             if file.is_file()
         ]
 
         return {
-
-            "total_documents":
-            len(files),
-
-            "documents":
-            files
+            "total_documents": len(doc_files) + len(image_files),
+            "documents": doc_files,
+            "images": image_files,
         }
 
     except Exception as e:

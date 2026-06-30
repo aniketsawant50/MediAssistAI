@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "question": "What is the purpose of the Patient Admission SOP?",
+    "golden_answer": "To standardize patient admission while ensuring registration accuracy, compliance, insurance verification, documentation, and patient experience.",
+    "category": "document_rag"
+  },
+  {
+    "id": 2,
+    "question": "What are the six types of admissions?",
+    "golden_answer": "Planned, Emergency, Day Care, Surgical, Maternity, and Transfer admissions.",
+    "category": "document_rag"
+  },
+  {
+    "id": 3,
+    "question": "Who is responsible for patient registration and identity verification?",
+    "golden_answer": "Front Office Executive.",
+    "category": "document_rag"
+  },
+  {
+    "id": 4,
+    "question": "Who handles policy verification and cashless initiation?",
+    "golden_answer": "Insurance Coordinator.",
+    "category": "document_rag"
+  },
+  {
+    "id": 5,
+    "question": "Who performs the initial medical assessment?",
+    "golden_answer": "Duty Doctor.",
+    "category": "document_rag"
+  },
+  {
+    "id": 6,
+    "question": "Who coordinates bed allocation?",
+    "golden_answer": "Nursing Team in coordination with admissions.",
+    "category": "document_rag"
+  },
+  {
+    "id": 7,
+    "question": "What is the first step in the admission workflow?",
+    "golden_answer": "Patient Arrival.",
+    "category": "document_rag"
+  },
+  {
+    "id": 8,
+    "question": "What documents are required during planned admission?",
+    "golden_answer": "Insurance card and government-issued ID.",
+    "category": "document_rag"
+  },
+  {
+    "id": 9,
+    "question": "What is UHID?",
+    "golden_answer": "Unique Hospital Identification Number.",
+    "category": "document_rag"
+  },
+  {
+    "id": 10,
+    "question": "What must be verified during identity verification?",
+    "golden_answer": "Name matching, photo identification, and insurance card validation.",
+    "category": "document_rag"
+  },
+  {
+    "id": 11,
+    "question": "Can admission proceed without consultant recommendation?",
+    "golden_answer": "No.",
+    "category": "document_rag"
+  },
+  {
+    "id": 12,
+    "question": "What ward categories are available?",
+    "golden_answer": "General Ward, Semi-Private, Private Room, Deluxe Room, ICU, and HDU.",
+    "category": "document_rag"
+  },
+  {
+    "id": 13,
+    "question": "What should the Insurance Desk verify?",
+    "golden_answer": "Policy status, coverage period, sum insured, network eligibility, waiting periods, and exclusions.",
+    "category": "document_rag"
+  },
+  {
+    "id": 14,
+    "question": "Within how many hours should cashless intimation be submitted?",
+    "golden_answer": "Within 2 hours of admission request.",
+    "category": "document_rag"
+  },
+  {
+    "id": 15,
+    "question": "Can emergency treatment be delayed for insurance approval?",
+    "golden_answer": "No.",
+    "category": "document_rag"
+  },
+  {
+    "id": 16,
+    "question": "Within how many hours must TPA be notified for emergency admission?",
+    "golden_answer": "Within 24 hours.",
+    "category": "document_rag"
+  },
+  {
+    "id": 17,
+    "question": "What documents are included in the administrative admission checklist?",
+    "golden_answer": "Admission Form, Consent Form, Patient Rights Acknowledgement, Identity Proof, and Insurance Documents.",
+    "category": "document_rag"
+  },
+  {
+    "id": 18,
+    "question": "What special consents require separate authorization?",
+    "golden_answer": "Surgery, Blood Transfusion, ICU Admission, High-Risk Procedures, and Anaesthesia.",
+    "category": "document_rag"
+  },
+  {
+    "id": 19,
+    "question": "What rights should patients be informed about?",
+    "golden_answer": "Privacy, confidentiality, informed consent, access to information, and respectful treatment.",
+    "category": "document_rag"
+  },
+  {
+    "id": 20,
+    "question": "What is the target registration time KPI?",
+    "golden_answer": "10 minutes or less.",
+    "category": "document_rag"
+  },
+  {
+    "id": 21,
+    "question": "What does TPA stand for?",
+    "golden_answer": "Third Party Administrator.",
+    "category": "document_rag"
+  },
+  {
+    "id": 22,
+    "question": "What is a cashless claim?",
+    "golden_answer": "A claim settled directly between insurer/TPA and hospital.",
+    "category": "document_rag"
+  },
+  {
+    "id": 23,
+    "question": "What documents are required for pre-authorization submission?",
+    "golden_answer": "Pre-auth form, doctor admission notes, investigation reports, insurance card copy, and KYC documents.",
+    "category": "document_rag"
+  },
+  {
+    "id": 24,
+    "question": "How often should approval status be tracked?",
+    "golden_answer": "Every 30 minutes.",
+    "category": "document_rag"
+  },
+  {
+    "id": 25,
+    "question": "What is the response SLA for TPA queries?",
+    "golden_answer": "Within 60 minutes.",
+    "category": "document_rag"
+  },
+  {
+    "id": 26,
+    "question": "When is enhancement approval required?",
+    "golden_answer": "When the expected bill exceeds the approved amount by 10% or more.",
+    "category": "document_rag"
+  },
+  {
+    "id": 27,
+    "question": "What should be verified before surgery?",
+    "golden_answer": "Procedure code, package eligibility, and implant coverage.",
+    "category": "document_rag"
+  },
+  {
+    "id": 28,
+    "question": "What non-payable items require separate identification?",
+    "golden_answer": "Registration charges, attendant food, toiletries, telephone charges, and visitor consumables.",
+    "category": "document_rag"
+  },
+  {
+    "id": 29,
+    "question": "How many hours before discharge should final authorization be requested?",
+    "golden_answer": "At least 4 hours before discharge.",
+    "category": "document_rag"
+  },
+  {
+    "id": 30,
+    "question": "What information must a discharge summary contain?",
+    "golden_answer": "Patient information, diagnoses, procedures, treatment, outcome, medication advice, and follow-up instructions.",
+    "category": "document_rag"
+  },
+  {
+    "id": 31,
+    "question": "What is the response time for a document query?",
+    "golden_answer": "2 hours.",
+    "category": "document_rag"
+  },
+  {
+    "id": 32,
+    "question": "Name three fraud indicators.",
+    "golden_answer": "Identity mismatch, fabricated documents, and inflated billing.",
+    "category": "document_rag"
+  },
+  {
+    "id": 33,
+    "question": "How long should medical records be retained according to SOP?",
+    "golden_answer": "10 years.",
+    "category": "document_rag"
+  },
+  {
+    "id": 34,
+    "question": "What is the claim rejection rate KPI target?",
+    "golden_answer": "Less than 2%.",
+    "category": "document_rag"
+  },
+  {
+    "id": 35,
+    "question": "What was the final diagnosis of patient HSP1001?",
+    "golden_answer": "Uncontrolled Type 2 Diabetes Mellitus with Diabetic Neuropathy.",
+    "category": "document_rag"
+  },
+  {
+    "id": 36,
+    "question": "What was the HbA1c value of patient HSP1001?",
+    "golden_answer": "10.2%.",
+    "category": "document_rag"
+  },
+  {
+    "id": 37,
+    "question": "Which medication was prescribed to HSP1002 for hypertension?",
+    "golden_answer": "Amlodipine 5 mg OD and Telmisartan 40 mg OD.",
+    "category": "document_rag"
+  },
+  {
+    "id": 38,
+    "question": "What diagnosis was given to HSP1003?",
+    "golden_answer": "Right Lower Lobe Pneumonia.",
+    "category": "document_rag"
+  },
+  {
+    "id": 39,
+    "question": "What treatment was provided for moderate COVID-19 pneumonia?",
+    "golden_answer": "Oxygen therapy, Remdesivir, and Dexamethasone.",
+    "category": "document_rag"
+  },
+  {
+    "id": 40,
+    "question": "What was the platelet count of the dengue patient?",
+    "golden_answer": "68,000/mm3.",
+    "category": "document_rag"
+  },
+  {
+    "id": 41,
+    "question": "What treatment was given for CKD Stage IV?",
+    "golden_answer": "Hemodialysis and fluid restriction.",
+    "category": "document_rag"
+  },
+  {
+    "id": 42,
+    "question": "What procedure was performed for STEMI patient HSP1010?",
+    "golden_answer": "Primary PCI with Drug Eluting Stent.",
+    "category": "document_rag"
+  },
+  {
+    "id": 43,
+    "question": "Who is the morning consultant in Pediatrics?",
+    "golden_answer": "Dr. Pooja Verma.",
+    "category": "document_rag"
+  },
+  {
+    "id": 44,
+    "question": "What is the Code Blue emergency contact number?",
+    "golden_answer": "2222.",
+    "category": "document_rag"
+  },
+  {
+    "id": 45,
+    "question": "Who is the consultant in ICU sample operations?",
+    "golden_answer": "Dr. Rajiv Nanda.",
+    "category": "document_rag"
+  },
+  {
+    "id": 46,
+    "question": "What are key NABH compliance areas related to patient care?",
+    "golden_answer": "Access and continuity of care, care of patients, medication management, patient rights, infection control, and information management.",
+    "category": "document_rag"
+  },
+  {
+    "id": 47,
+    "question": "What are examples of Protected Health Information (PHI)?",
+    "golden_answer": "Patient name, medical record number, diagnosis, insurance details, laboratory reports, and treatment information.",
+    "category": "document_rag"
+  },
+  {
+    "id": 48,
+    "question": "What is required for valid consent?",
+    "golden_answer": "Patient identification, capacity assessment, voluntary agreement, witness where applicable, and documentation.",
+    "category": "document_rag"
+  },
+  {
+    "id": 49,
+    "question": "Within how many hours must a serious incident be reported?",
+    "golden_answer": "Within 2 hours.",
+    "category": "document_rag"
+  },
+  {
+    "id": 50,
+    "question": "What are the patient's core rights under the compliance policy?",
+    "golden_answer": "Respect, dignity, privacy, confidentiality, safe care, access to information, treatment refusal, second opinion, and complaint resolution.",
+    "category": "document_rag"
+  }
+]

@@ -3,8 +3,8 @@ class TextChunker:
 
     def __init__(self):
         self.splitter = RecursiveCharacterTextSplitter(
-            chunk_size=600,
-            chunk_overlap=100
+            chunk_size=500,
+            chunk_overlap=200
         )
 
     def split(self, text: str):

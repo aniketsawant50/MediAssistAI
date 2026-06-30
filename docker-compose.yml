@@ -1,0 +1,15 @@
+services:
+  mediassist:
+    build: .
+    container_name: mediassist-ai
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+    environment:
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - .:/app
+      - ./Data:/app/Data
+      - ./VectorDB:/app/VectorDB
+      - ./chroma_db:/app/chroma_db
+    restart: unless-stopped

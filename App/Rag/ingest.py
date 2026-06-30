@@ -1,10 +1,10 @@
 from pathlib import Path
 import uuid                    #It generates unique ids
 
-from App.document_loader import UnifiedLoader
-from App.chunking import TextChunker
-from App.embedding_service import EmbeddingService
-from App.vector_store import VectorStore
+from App.Rag.document_loader import UnifiedLoader
+from App.Rag.chunking import TextChunker
+from App.Rag.embedding_service import EmbeddingService
+from App.Rag.vector_store import VectorStore
 
 # Root data folder
 DATA_DIR = Path("Data/uploads")
@@ -77,38 +77,42 @@ def ingest():
     if len(all_chunks) == 0:
 
         print(
-            "No valid chunks found."
+            "No valid document chunks found."
         )
 
-        return
+    else:
 
-    print(
-        f"\nTotal Chunks Created: {len(all_chunks)}"
-    )
-
-    embeddings = embedder.embed_documents(
-        all_chunks
-    )
-
-    ids = [
-        str(uuid.uuid4())
-        for _ in range(
-            len(all_chunks)
+        print(
+            f"\nTotal Chunks Created: {len(all_chunks)}"
         )
-    ]
 
-    store.add(
-        ids=ids,
-        documents=all_chunks,
-        embeddings=embeddings,
-        metadatas=all_metadata
-    )
+        embeddings = embedder.embed_documents(
+            all_chunks
+        )
 
-    print(
-        f"\nSuccessfully stored "
-        f"{len(all_chunks)} chunks "
-        f"in Vector Database"
-    )
+        ids = [
+            str(uuid.uuid4())
+            for _ in range(
+                len(all_chunks)
+            )
+        ]
+
+        store.add(
+            ids=ids,
+            documents=all_chunks,
+            embeddings=embeddings,
+            metadatas=all_metadata
+        )
+
+        print(
+            f"\nSuccessfully stored "
+            f"{len(all_chunks)} chunks "
+            f"in Vector Database"
+        )
+
+    from App.Multimodal.ingest import ingest_images
+
+    ingest_images()
 
 
 if __name__ == "__main__":

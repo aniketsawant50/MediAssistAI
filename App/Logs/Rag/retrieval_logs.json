@@ -1,0 +1,91 @@
+[
+  {
+    "agent": "mcp",
+    "query": "Show patient PC00001Q",
+    "has_result": true,
+    "timestamp": "2026-06-30T16:46:11.444223Z"
+  },
+  {
+    "agent": "mcp",
+    "query": "Show patient PC00001Q",
+    "has_result": true,
+    "timestamp": "2026-06-30T16:47:12.471092Z"
+  },
+  {
+    "query": "what is admission process",
+    "chunk_count": 5,
+    "sources": [
+      "Admission Process- SOP.pdf"
+    ],
+    "timestamp": "2026-06-30T16:47:26.164556Z"
+  },
+  {
+    "agent": "mcp",
+    "query": "Show patient PC00001Q",
+    "has_result": true,
+    "timestamp": "2026-06-30T16:49:47.091184Z"
+  },
+  {
+    "agent": "mcp",
+    "query": "Show prescriptions of Patient 1 ML",
+    "has_result": true,
+    "timestamp": "2026-06-30T16:49:54.288519Z"
+  },
+  {
+    "query": "what is admission process",
+    "chunk_count": 5,
+    "sources": [
+      "Admission Process- SOP.pdf"
+    ],
+    "timestamp": "2026-06-30T16:50:05.691326Z"
+  },
+  {
+    "agent": "mcp",
+    "query": "Show patient PC00001Q",
+    "has_result": true,
+    "timestamp": "2026-06-30T16:52:20.000728Z"
+  },
+  {
+    "agent": "mcp",
+    "query": "Show lab reports of Patient 1 ML",
+    "has_result": true,
+    "timestamp": "2026-06-30T16:53:00.536960Z"
+  },
+  {
+    "agent": "multimodal",
+    "query": "6.jpg",
+    "image_chunks": 5,
+    "sources": [
+      "57.jpg",
+      "9.jpg",
+      "52.jpg",
+      "51.jpg"
+    ],
+    "timestamp": "2026-06-30T16:53:32.398957Z"
+  },
+  {
+    "query": "what is the admission process",
+    "chunk_count": 5,
+    "sources": [
+      "Admission Process- SOP.pdf"
+    ],
+    "timestamp": "2026-06-30T16:54:24.906063Z"
+  },
+  {
+    "query": "What ward categories are available?",
+    "chunk_count": 5,
+    "sources": [
+      "Admission Process- SOP.pdf"
+    ],
+    "timestamp": "2026-06-30T17:30:08.123730Z"
+  },
+  {
+    "query": "what are the tables in database",
+    "chunk_count": 5,
+    "sources": [
+      "9.jpg",
+      "HOSPITAL COMPLIANCE.pdf"
+    ],
+    "timestamp": "2026-06-30T17:37:17.424766Z"
+  }
+]

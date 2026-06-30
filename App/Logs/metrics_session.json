@@ -1,0 +1,81 @@
+{
+  "total_requests": 6,
+  "total_prompt_tokens": 1910,
+  "total_completion_tokens": 877,
+  "total_tokens": 2787,
+  "total_cost_usd": 0.00182,
+  "sessions": [
+    {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "agents_used": [
+        "planner",
+        "mcp",
+        "reasoning",
+        "evaluation"
+      ]
+    },
+    {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "agents_used": [
+        "planner",
+        "mcp",
+        "reasoning",
+        "evaluation"
+      ]
+    },
+    {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "agents_used": [
+        "planner",
+        "multimodal",
+        "reasoning",
+        "evaluation"
+      ]
+    },
+    {
+      "prompt_tokens": 385,
+      "completion_tokens": 212,
+      "total_tokens": 597,
+      "cost_usd": 0.000395,
+      "agents_used": [
+        "planner",
+        "retriever",
+        "reasoning",
+        "evaluation"
+      ]
+    },
+    {
+      "prompt_tokens": 665,
+      "completion_tokens": 211,
+      "total_tokens": 876,
+      "cost_usd": 0.000559,
+      "agents_used": [
+        "planner",
+        "retriever",
+        "reasoning",
+        "evaluation"
+      ]
+    },
+    {
+      "prompt_tokens": 860,
+      "completion_tokens": 454,
+      "total_tokens": 1314,
+      "cost_usd": 0.000866,
+      "agents_used": [
+        "planner",
+        "retriever",
+        "reasoning",
+        "evaluation"
+      ]
+    }
+  ]
+}
